@@ -63,20 +63,14 @@ export default function Expert() {
 
   return (
     <>
-      <TextDefault text={"Habilidades e Experise"} />
-      <p className="font-bold text-gray-400">
+      <TextDefault text={"Habilidades e Expertise"} />
+      <p className="font-bold text-gray-400 text-center py-6">
         Domínio completo do stack moderno de desenvolvimento, desde frontend até
         infraestrutura
       </p>
-      <div className="p-8 bg-black rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="p-8 rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-6">
         {skills.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center justify-center p-6 rounded-xl bg-gray-900 text-blue-500 shadow-lg hover:shadow-blue-500/40 transition"
-          >
-            <div className="text-3xl mb-3">{item.icon}</div>
-            <p className="font-semibold">{item.category}</p>
-          </div>
+          <div className="bg-black rounded-2xl h-[200px] w-[400px]"></div>
         ))}
       </div>
     </>
