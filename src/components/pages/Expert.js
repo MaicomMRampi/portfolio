@@ -70,7 +70,10 @@ export default function Expert() {
       </p>
       <div className="p-8 rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-6">
         {skills.map((item, index) => (
-          <div className="bg-black rounded-2xl h-[200px] w-[400px]"></div>
+          <div
+            key={index}
+            className="bg-black rounded-2xl h-[200px] w-[400px]"
+          ></div>
         ))}
       </div>
     </>
