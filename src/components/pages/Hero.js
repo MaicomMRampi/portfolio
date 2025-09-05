@@ -1,6 +1,10 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export default function Hero() {
   return (
-    <>
+    <div>
       <p className="text-blue-500 text-center py-6">Olá, eu sou </p>
       <h1 className="text-white text-center text-6xl font-extrabold">
         Desenvolvedor
@@ -34,6 +38,6 @@ export default function Hero() {
           <p>Projetos</p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

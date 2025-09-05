@@ -68,7 +68,7 @@ export default function Expert() {
         Domínio completo do stack moderno de desenvolvimento, desde frontend até
         infraestrutura
       </p>
-      <div className="p-8 w-7xl bg-black rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="p-8 bg-black rounded-2xl grid grid-cols-1 md:grid-cols-3 gap-6">
         {skills.map((item, index) => (
           <div
             key={index}
