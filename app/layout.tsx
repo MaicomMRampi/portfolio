@@ -36,29 +36,15 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
-        className={clsx(
-          "min-h-screen text-foreground bg-background font-sans antialiased",
-          fontSans.variable,
-        )}
+        className="min-h-screen bg-[#0a0c10] 
+    bg-[linear-gradient(to_right,rgba(0,102,255,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,102,255,0.1)_1px,transparent_1px)] 
+    bg-[size:40px_40px]"
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          <div className="relative flex flex-col h-screen">
-            <Navbar />
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              {children}
-            </main>
-            <footer className="w-full flex items-center justify-center py-3">
-              <Link
-                isExternal
-                className="flex items-center gap-1 text-current"
-                href="https://heroui.com?utm_source=next-app-template"
-                title="heroui.com homepage"
-              >
-                <span className="text-default-600">Powered by</span>
-                <p className="text-primary">HeroUI</p>
-              </Link>
-            </footer>
-          </div>
+          <Navbar />
+          <main className="container mx-auto max-w-7xl px-6 flex-grow">
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
