@@ -3,6 +3,8 @@ import Terminal from "@/components/pages/terminal";
 import Habilits from "@/components/pages/Habilits";
 import Projects from "@/components/pages/Projects";
 import Experience from "@/components/pages/ExperienceProfiss";
+import Depoiment from "@/components/pages/Depoiment";
+import Opportunity from "@/components/pages/Opportunity";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Habilits />
       <Projects />
       <Experience />
+      <Depoiment />
+      <Opportunity />
     </section>
   );
 }
