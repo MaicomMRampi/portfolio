@@ -55,7 +55,7 @@ export default function Experience() {
       ),
     },
     {
-      title: "2024 - 2025",
+      title: "2025",
       content: (
         <Card className="bg-black p-6 space-y-2 rounded-2xl shadow-lg">
           <div className="flex items-center gap-2">
