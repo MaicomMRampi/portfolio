@@ -1,11 +1,19 @@
+"use client";
 import { Card } from "@heroui/card";
 import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
 import TextDefault from "../TextPadrao";
 import TextPadraoSecudary from "../TextPadraoSecudary";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "../ui/stateful-button";
 
 export default function Opportunity() {
+  const handleClick = () => {
+    return new Promise((resolve) => {
+      setTimeout(resolve, 4000);
+    });
+  };
+
   return (
     <section className="w-full space-y-10">
       <div className="text-center space-y-4">
@@ -87,13 +95,8 @@ export default function Opportunity() {
               rows={4}
               className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white"
             />
-            <button
-              type="submit"
-              className="w-full py-3 rounded-lg bg-white text-blue-600 font-semibold hover:bg-neutral-100 transition"
-            >
-              Enviar
-            </button>
           </form>
+          <Button onClick={handleClick}>Send message</Button>
         </Card>
       </div>
     </section>
