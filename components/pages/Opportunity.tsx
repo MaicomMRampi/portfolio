@@ -79,7 +79,7 @@ export default function Opportunity() {
           <p className="text-sm text-neutral-200 mb-6">
             Preencha o formulário e entrarei em contato em breve.
           </p>
-          <form className="space-y-4">
+          <div className="space-y-4">
             <input
               type="text"
               placeholder="Seu nome"
@@ -95,8 +95,10 @@ export default function Opportunity() {
               rows={4}
               className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white"
             />
-          </form>
-          <Button onClick={handleClick}>Send message</Button>
+            <div className="justify-center flex">
+              <Button onClick={handleClick}>Enviar Mensagem</Button>
+            </div>
+          </div>
         </Card>
       </div>
     </section>
