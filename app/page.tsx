@@ -5,6 +5,7 @@ import Projects from "@/components/pages/Projects";
 import Experience from "@/components/pages/ExperienceProfiss";
 import Depoiment from "@/components/pages/Depoiment";
 import Opportunity from "@/components/pages/Opportunity";
+import Footer from "@/components/pages/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Experience />
       <Depoiment />
       <Opportunity />
+      <Footer />
     </section>
   );
 }

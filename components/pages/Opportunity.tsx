@@ -2,6 +2,8 @@ import { Card } from "@heroui/card";
 import { Mail, Phone, MapPin, MessageSquare } from "lucide-react";
 import TextDefault from "../TextPadrao";
 import TextPadraoSecudary from "../TextPadraoSecudary";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Opportunity() {
   return (
@@ -14,13 +16,32 @@ export default function Opportunity() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Contatos */}
         <div className="flex flex-col gap-4">
-          <Card className="bg-neutral-900 p-6 rounded-2xl shadow-lg flex items-start gap-4">
-            <Phone className="text-blue-500 w-6 h-6 shrink-0" />
-            <div>
-              <p className="text-neutral-400 text-sm">WhatsApp</p>
-              <p className="text-white font-medium">(49) 99194-2288</p>
-            </div>
-          </Card>
+          <Link href={"https://wa.link/e9499v"} target="_blank">
+            <Card className="bg-neutral-900 p-6 rounded-2xl shadow-lg flex items-start gap-4">
+              <div className="flex justify-between w-full">
+                <div className="flex flex-col gap-2">
+                  <Image
+                    src={"/images/whatsapp.png"}
+                    width={25}
+                    height={25}
+                    alt="whats"
+                  />
+                  <div>
+                    <p className="text-neutral-400 text-sm">WhatsApp</p>
+                    <p className="text-white font-medium">(49) 99194-2288</p>
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <Image
+                    src={"/images/wa.link_e9499v.png"}
+                    width={80}
+                    height={80}
+                    alt="whats"
+                  />
+                </div>
+              </div>
+            </Card>
+          </Link>
 
           <Card className="bg-neutral-900 p-6 rounded-2xl shadow-lg flex items-start gap-4">
             <Mail className="text-blue-500 w-6 h-6 shrink-0" />

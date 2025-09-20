@@ -41,14 +41,20 @@ export default function Projects() {
               <p className="text-gray-400 font-bold">{item.description}</p>
 
               {/* tecnologias utiliadas */}
-              <div className="flex justify-between">
+              <div className="grid grid-cols-3 gap-3">
                 {item.technology.map((tec, index) => (
-                  <div
+                  <button
                     key={index}
-                    className="border border-gray-400 p-1 rounded-lg"
+                    className="relative inline-flex overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
                   >
-                    {tec}
-                  </div>
+                    {/* Border/Glow animado */}
+                    <span className="absolute -inset-6 animate-pulse bg-[conic-gradient(from_90deg_at_50%_50%,#000_0%,#000_50%,#E2CBFF_100%)] rounded-full" />
+
+                    {/* Conteúdo do botão */}
+                    <span className="relative inline-flex h-full w-full items-center justify-center rounded-full bg-slate-950  text-sm font-medium text-white backdrop-blur-xl transition-transform duration-200 ">
+                      {tec}
+                    </span>
+                  </button>
                 ))}
               </div>
             </div>

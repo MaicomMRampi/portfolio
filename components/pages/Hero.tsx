@@ -59,8 +59,8 @@ export default function Hero() {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 text-center">
-        {habilits.map((item) => (
-          <div>
+        {habilits.map((item, index) => (
+          <div key={index}>
             <p>{item.value} +</p>
             <p>{item.description}</p>
           </div>
