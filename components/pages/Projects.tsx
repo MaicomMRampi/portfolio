@@ -16,7 +16,7 @@ const projects = [
     title: "Site Empresarial",
     description:
       "Site criado para uma empresa que entrou em contato comigo para o desenvolvimento do mesmo",
-    technology: ["Next.js", "Typescrypt", "Tailwind CSS", "Node.js", "MySql"],
+    technology: ["Next.js", "Typescrypt", "Tailwind CSS"],
   },
 ];
 

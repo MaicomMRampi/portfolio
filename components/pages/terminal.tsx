@@ -21,19 +21,19 @@ export default function Terminal() {
         <span className="text-green-400">{'"Desenvolvedor Full Stack"'}</span>,
         <br />
         &nbsp;&nbsp;<span className="text-blue-400">location:</span>{" "}
-        <span className="text-green-400">{'"São Paulo, Brasil"'}</span>,
+        <span className="text-green-400">{'"Chapecó, Brasil"'}</span>,
         <br />
         &nbsp;&nbsp;<span className="text-blue-400">skills:</span> [
         <span className="text-green-400">{'"React"'}</span>,{" "}
         <span className="text-green-400">{'"Node.js"'}</span>,{" "}
-        <span className="text-green-400">{'"TypeScript"'}</span>,{" "}
-        <span className="text-green-400">{'"Python"'}</span>],
-        <br />
+        <span className="text-green-400">{'"TypeScript"'}</span>], <br />
         &nbsp;&nbsp;<span className="text-blue-400">passion:</span>{" "}
         <span className="text-green-400">{'"Criar soluções inovadoras"'}</span>,
         <br />
-        &nbsp;&nbsp;<span className="text-blue-400">currentFocus:</span>{" "}
-        <span className="text-green-400">{'"IA & Machine Learning"'}</span>
+        &nbsp;&nbsp;<span className="text-blue-400">currentFocus:</span> [
+        <span className="text-green-400">{'"Arquitetura de Software"'}</span>,
+        <span className="text-green-400">{'"Ciência de Dados"'}</span>
+        <span className="text-green-400">{'"Cybersegurança"'}</span>]
         <br />
         {"}"}
       </div>
