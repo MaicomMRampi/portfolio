@@ -4,6 +4,9 @@ import { motion } from "motion/react";
 import CountUp from "react-countup";
 import { ColourfulText } from "../ui/colourful-text";
 import { TypewriterEffectSmooth } from "../ui/typewriter-effect";
+import { Button } from "@heroui/button";
+import { ArrowDownToLine, ArrowRight, MoveRight, Rocket } from "lucide-react";
+import Link from "next/link";
 
 const habilits = [
   {
@@ -95,6 +98,38 @@ export default function Hero() {
             <p>{item.description}</p>
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center pt-8 gap-4">
+        <Link
+          download={"/Curriculo Maicom Mateus Rampi.pdf"}
+          href={"/Curriculo Maicom Mateus Rampi.pdf"}
+          target="_blank"
+        >
+          <Button
+            className="
+              px-6 py-3 
+              rounded-xl 
+              transition 
+              hover:[box-shadow:0_0_15px_#00a2ff,0_0_30px_#00a2ff,0_0_60px_#00a2ff] 
+              hover:scale-105
+            "
+            startContent={<ArrowDownToLine className="" size={18} />}
+            color="primary"
+            variant="ghost"
+          >
+            <span className="font-bold">Baixar CV</span>
+          </Button>
+        </Link>
+        <Link href={"https://github.com/MaicomMRampi"} target="_blank">
+          <Button
+            className="text-black"
+            startContent={<Rocket className="text-black" size={18} />}
+            endContent={<ArrowRight className="text-black" size={18} />}
+            color="primary"
+          >
+            Ver Projetos
+          </Button>
+        </Link>
       </div>
     </div>
   );
