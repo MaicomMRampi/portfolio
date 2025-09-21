@@ -1,6 +1,6 @@
 export default function Terminal() {
   return (
-    <div className="my-6 bg-[#0a0c10] text-white rounded-lg shadow-lg border border-blue-500/30 overflow-hidden w-full max-w-2xl mx-auto">
+    <div className="mt-6 bg-[#0a0c10] text-white rounded-lg shadow-lg border border-blue-500/30 overflow-hidden w-full max-w-2xl mx-auto">
       {/* Header */}
       <div className="flex items-center gap-2 px-4 py-2 bg-[#111318] border-b border-blue-500/30">
         <div className="flex gap-2">

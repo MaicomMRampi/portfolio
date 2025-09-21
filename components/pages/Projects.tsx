@@ -15,7 +15,7 @@ const projects = [
     image: "/images/Pwa.png",
     title: "Site Empresarial",
     description:
-      "Site criado para uma empresa que entrou em contato comigo para o desenvolvimento do mesmo",
+      "Criação de site profissional para empresa cliente, englobando arquitetura, design responsivo e implementação técnica.",
     technology: ["Next.js", "Typescrypt", "Tailwind CSS"],
   },
 ];

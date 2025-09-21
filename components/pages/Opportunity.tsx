@@ -62,7 +62,7 @@ export default function Opportunity() {
           </Card>
 
           <Card className="bg-neutral-900 p-6 rounded-2xl shadow-lg flex items-start gap-4">
-            <MapPin className="text-blue-500 w-6 h-6 shrink-0" />
+            <MapPin className="text-red-800 w-6 h-6 shrink-0" />
             <div>
               <p className="text-neutral-400 text-sm">Localização</p>
               <p className="text-white font-medium">Chapecó - SC</p>
