@@ -144,7 +144,23 @@ export default function Experience() {
     <>
       <TextDefault text="Experiência Profissional" />
       <TextPadraoSecudary text="Minha jornada no desenvolvimento de software e liderança técnica" />
-      <Timeline data={data} />
+      <div className="hidden md:block">
+        <Timeline data={data} />
+      </div>
+      <div className="block md:hidden space-y-8">
+        {data.map((item, i) => (
+          <Card
+            key={i}
+            className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-5 shadow-xl border border-slate-700"
+          >
+            <div className="absolute -top-0 left-4 px-3 mt-1.5 py-1 rounded-full bg-blue-600 text-white text-xs font-bold shadow-md">
+              {item.title}
+            </div>
+            <div className="mt-4 space-y-4">{item.content}</div>
+            <div className="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.4),transparent_60%)] animate-pulse" />
+          </Card>
+        ))}
+      </div>
     </>
   );
 }
