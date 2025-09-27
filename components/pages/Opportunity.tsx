@@ -6,12 +6,83 @@ import TextPadraoSecudary from "../TextPadraoSecudary";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/stateful-button";
+import { useState } from "react";
+import axios from "axios";
+import { addToast } from "@heroui/toast";
 
 export default function Opportunity() {
-  const handleClick = () => {
-    return new Promise((resolve) => {
-      setTimeout(resolve, 4000);
-    });
+  const handleSubmit = async () => {
+    if (!values.name || !values.email || !values.message) {
+      addToast({
+        title: "Por favor, preencha todos os campos.",
+        color: "danger",
+        timeout: 3000,
+        shouldShowTimeoutProgress: true,
+      });
+      return;
+    }
+
+    try {
+      const send = await axios.post(
+        "https://api.emailjs.com/api/v1.0/email/send",
+        data,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+
+      if (send.status === 200) {
+        addToast({
+          title: "Mensagem enviada com sucesso!",
+          description:
+            "Obrigado por entrar em contato. Responderemos em breve.",
+          color: "success",
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+        });
+        setValues({ name: "", email: "", message: "" });
+      } else {
+        addToast({
+          title: "Erro ao enviar a mensagem.",
+          description: "Por favor, tente novamente mais tarde.",
+          color: "danger",
+          timeout: 3000,
+          shouldShowTimeoutProgress: true,
+        });
+        setValues({ name: "", email: "", message: "" });
+      }
+
+      console.log("🚀 ~ handleSubmit ~ send:", send.status);
+    } catch (error: any) {
+      console.error(
+        "❌ Erro ao enviar:",
+        error.response?.data || error.message
+      );
+    }
+  };
+
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const valuesContact = async (field: string, value: string) => {
+    setValues((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const data = {
+    service_id: "service_ud9ddr9",
+    template_id: "template_z6sr29i",
+    user_id: "u0NQo0sRKaS8Kg6Wc",
+    template_params: {
+      nome: values.name,
+      mensagem: values.message,
+      email: values.email,
+    },
   };
 
   return (
@@ -81,22 +152,28 @@ export default function Opportunity() {
           </p>
           <div className="space-y-4">
             <input
+              value={values.name}
               type="text"
+              onChange={(e) => valuesContact("name", e.target.value)}
               placeholder="Seu nome"
               className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white"
             />
             <input
+              value={values.email}
               type="email"
+              onChange={(e) => valuesContact("email", e.target.value)}
               placeholder="Seu e-mail"
               className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white"
             />
             <textarea
+              value={values.message}
+              onChange={(e) => valuesContact("message", e.target.value)}
               placeholder="Sua mensagem"
               rows={4}
               className="w-full p-3 rounded-lg bg-white/10 text-white placeholder-neutral-300 focus:outline-none focus:ring-2 focus:ring-white"
             />
             <div className="justify-center flex">
-              <Button onClick={handleClick}>Enviar Mensagem</Button>
+              <Button onClick={handleSubmit}>Enviar Mensagem</Button>
             </div>
           </div>
         </Card>
